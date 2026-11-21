@@ -1,0 +1,12 @@
+services:
+  serverwatch:
+    build: .
+    image: serverwatch:local
+    container_name: serverwatch
+    restart: unless-stopped
+    init: true
+    volumes:
+      - serverwatch-logs:/app/logs
+
+volumes:
+  serverwatch-logs:

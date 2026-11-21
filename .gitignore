@@ -1,0 +1,27 @@
+# Python virtual environments
+.venv/
+venv/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+
+# Pytest and test coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime logs
+logs/*
+!logs/.gitkeep
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
