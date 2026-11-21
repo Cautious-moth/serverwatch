@@ -19,4 +19,7 @@ RUN mkdir -p /app/logs && chown app:app /app/logs
 
 USER app
 
+HEALTHCHECK --interval=10s --timeout=5s --start-period=15s --retries=3 \
+    CMD ["python", "-m", "monitoring.health"]
+
 CMD ["python", "-m", "monitoring.system_monitor"]

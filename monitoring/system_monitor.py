@@ -3,6 +3,7 @@ import logging
 import time
 from logging.handlers import RotatingFileHandler
 from monitoring.alerts import check_thresholds
+from monitoring.health import record_heartbeat
 from pathlib import Path
 from datetime import datetime
 
@@ -92,6 +93,9 @@ if __name__ == "__main__":
             for alert in alerts:
                 logger.warning(alert["message"])
                 print(alert["message"])
+
+            # Record successful completion of this cycle
+            record_heartbeat()    
 
             time.sleep(5)
 
